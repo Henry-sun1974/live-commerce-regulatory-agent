@@ -1,0 +1,222 @@
+# 规则本体 v0 — 机器可读规则清单
+# 依据：《直播电商监督管理办法》（总局令第117号，2026-02-01 施行）
+# 上游：docs/regulatory/规则条款映射表.md（唯一口径，本文件与其同步）
+# 格式：rule_id | rule_type | trigger | article_ref | level | status
+# rule_type ∈ {禁令, 阈值, 义务}；level ∈ {红, 黄}；status ∈ {active, pending_params}
+rules:
+  # ── 第三章：直播间运营者、直播营销人员（虚假宣传类）──
+  - rule_id: R-001
+    rule_type: 禁令
+    trigger: "话术包含绝对化用语（全网最好|全国第一|顶级|最先进|唯一|史上最低价|销量第一）"
+    article_ref: "第三十四条"
+    level: 红
+    status: active
+  - rule_id: R-002
+    rule_type: 禁令
+    trigger: "话术对商品功效/成分作无依据断言（根治|药到病除|100%有效|纯天然|无副作用|特效，且无对应资质/检测证明）"
+    article_ref: "第三十四条"
+    level: 红
+    status: active
+  # ── 第二章：直播电商平台经营者 ──
+  - rule_id: R-003
+    rule_type: 义务
+    trigger: "平台核验动作缺失：直播间运营者/直播营销人员身份信息未核验登记；登记信息超过六个月未核验更新；平台为与真实身份不符的人员提供直播服务"
+    article_ref: "第八条"
+    level: 红
+    status: active
+  - rule_id: R-005
+    rule_type: 义务
+    trigger: "平台每年一月、七月未按期向平台住所地省级市场监督管理部门报送直播间运营者、直播营销人员身份信息（报送记录缺失）"
+    article_ref: "第九条"
+    level: 黄
+    status: active
+  - rule_id: R-006
+    rule_type: 义务
+    trigger: "重点直播间（关注用户数≥X万 或 月交易规模≥X万元，阈值参数待业务方定参）未纳入技术监测、实时巡查范围"
+    article_ref: "第十一条"
+    level: 黄
+    status: pending_params
+  - rule_id: R-007
+    rule_type: 义务
+    trigger: "平台收到监管通报或自监测发现违法行为后，未按平台规则采取警示、限制功能、限制流量、暂停直播、限期停播、关闭账号、列入黑名单等处置措施；或处置种类/幅度与违法事实、情节明显不相当"
+    article_ref: "第十二条"
+    level: 黄
+    status: active
+  - rule_id: R-008
+    rule_type: 义务
+    trigger: "平台未建立风险识别制度或未配备与经营规模相适应的直播管理专业人员；直播中违法行为未及时采取警示、限制流量、暂停直播等处置"
+    article_ref: "第十三条"
+    level: 黄
+    status: active
+  - rule_id: R-009
+    rule_type: 义务
+    trigger: "平台未将严重违法主体列入黑名单；黑名单期间未采取必要措施防止其更换账号、重新注册规避惩戒；期限届满未移出并解除处置"
+    article_ref: "第十四条"
+    level: 黄
+    status: active
+  - rule_id: R-010
+    rule_type: 义务
+    trigger: "平台交易信息（直播视频回放、订单详情页快照、客服/支付/物流/售后记录等）保存时长不足三年"
+    article_ref: "第十六条"
+    level: 黄
+    status: active
+  - rule_id: R-011
+    rule_type: 义务
+    trigger: "平台未采取有效措施防范、处置直播间利用人工智能等技术手段编造传播虚假或引人误解商业信息、假冒他人宣传（AI违规内容处置记录缺失）"
+    article_ref: "第十七条"
+    level: 红
+    status: active
+  - rule_id: R-012
+    rule_type: 义务
+    trigger: "发生消费争议时，平台未根据消费者要求提供直播间运营者、直播营销人员相关信息及交易记录等必要信息"
+    article_ref: "第十八条"
+    level: 黄
+    status: active
+  - rule_id: R-013
+    rule_type: 义务
+    trigger: "平台知道或应当知道直播间销售的商品/服务不符合保障人身、财产安全要求或侵害消费者权益，未依法采取必要措施"
+    article_ref: "第十九条"
+    level: 红
+    status: active
+  - rule_id: R-014
+    rule_type: 义务
+    trigger: "投诉集中度超阈值（单直播间/单主播投诉量占比≥X%，参数待业务方定参）的直播间未纳入技术监测、实时巡查；投诉未按处理流程和反馈时限处理"
+    article_ref: "第二十条"
+    level: 黄
+    status: pending_params
+  # ── 第三章：直播间运营者、直播营销人员 ──
+  - rule_id: R-015
+    rule_type: 义务
+    trigger: "直播间运营者账号信息主页未显著公示名称（姓名）、统一社会信用代码（身份证件号码）、住所（经营场所）、行政许可等信息或链接标识；信息变更后三个工作日内未报送平台"
+    article_ref: "第二十五条"
+    level: 黄
+    status: active
+  - rule_id: R-016
+    rule_type: 义务
+    trigger: "直播页面未以显著方式持续展示实际销售商品/提供服务的经营者名称（姓名）、实际经营地址、联系方式或链接标识；链接多次跳转、设置连续多次验证/强制关注等不合理访问限制、弹窗覆盖干扰阅读"
+    article_ref: "第二十六条"
+    level: 黄
+    status: active
+  - rule_id: R-017
+    rule_type: 义务
+    trigger: "直播间运营者未核验实际经营者的名称、统一社会信用代码（身份证件号码）、地址、联系方式、行政许可、强制性产品认证、产品合格证明等信息即选品上架；核验记录保存不足三年"
+    article_ref: "第二十七条"
+    level: 红
+    status: active
+  - rule_id: R-018
+    rule_type: 义务
+    trigger: "直播间运营者未核验直播营销人员身份信息（姓名、身份证件号码、经常居住地址、联系方式、所属机构、专业资质等）；每次直播前未将核验信息报送平台；记录保存不足三年"
+    article_ref: "第二十八条"
+    level: 红
+    status: active
+  - rule_id: R-019
+    rule_type: 禁令
+    trigger: "账号名称、头像、简介、直播间标题、封面、布景、道具等含有损害国家利益和社会公共利益、违背公序良俗或欺骗、误导消费者内容的信息"
+    article_ref: "第二十九条"
+    level: 黄
+    status: active
+  - rule_id: R-020
+    rule_type: 义务
+    trigger: "直播前未对展示内容、讲解内容、服装、布景、道具等进行合规审核（无直播前审核记录）"
+    article_ref: "第三十条"
+    level: 黄
+    status: active
+  - rule_id: R-021
+    rule_type: 义务
+    trigger: "直播营销人员口误、表述不完整、表述不当等情形未现场纠正；直播间互动内容未实时管理、违法信息未及时处置（处置记录缺失）"
+    article_ref: "第三十一条"
+    level: 黄
+    status: active
+  - rule_id: R-022
+    rule_type: 义务
+    trigger: "未显著展示所销售商品品名、价格、计价单位或服务项目、内容、价格、计价方法或链接标识；采取价格比较、折价、减价促销未显著标明被比较价格或折价、减价的计算基准"
+    article_ref: "第三十二条"
+    level: 黄
+    status: active
+  - rule_id: R-023
+    rule_type: 禁令
+    trigger: "直播间销售/提供违法商品或服务：不符合保障人身、财产安全要求和环保要求的商品服务；掺杂掺假、以假充真、以次充好等质量不合格商品；法律、行政法规禁止交易或损害国家利益、社会公共利益、违背公序良俗的商品服务（违禁类目关键词/资质缺失信号）"
+    article_ref: "第三十三条"
+    level: 红
+    status: active
+  - rule_id: R-024
+    rule_type: 禁令
+    trigger: "话术对销售情况、用户评价、曾获荣誉、资格资质作虚假或引人误解宣称（销量破亿|销量第一|好评率100%|央视推荐|XX认证，且无依据）"
+    article_ref: "第三十四条"
+    level: 红
+    status: active
+  - rule_id: R-025
+    rule_type: 禁令
+    trigger: "利用人工智能等技术手段编造、传播虚假或引人误解的商业信息，或假冒他人进行商业宣传"
+    article_ref: "第三十四条"
+    level: 红
+    status: active
+  - rule_id: R-026
+    rule_type: 义务
+    trigger: "直播内容构成商业广告（有影响的自然人以其名义或形象推荐证明、录播剪辑后以文字图像视频音频等形式发布等情形）但未依照广告法履行广告发布者、广告经营者或广告代言人义务"
+    article_ref: "第三十五条"
+    level: 黄
+    status: active
+  - rule_id: R-027
+    rule_type: 禁令
+    trigger: "编造、传播或指使他人编造、传播虚假信息或误导性信息，损害其他经营者商业信誉、商品声誉（话术/内容含无事实依据的贬损、抹黑类表述）"
+    article_ref: "第三十六条"
+    level: 红
+    status: active
+  # ── 第三章：AI 生成内容标识（基线 R-004）──
+  - rule_id: R-004
+    rule_type: 义务
+    trigger: "AI生成人物图像/视频用于直播但未按国家规定标识、未持续向消费者提示（媒体/元数据标识缺失）"
+    article_ref: "第三十七条"
+    level: 红
+    status: active
+  # ── 阈值类规则（参数待业务方定参，禁止直接启用）──
+  - rule_id: R-028
+    rule_type: 阈值
+    trigger: "促销价格真实性：折价、减价、价格比较促销未显著标明被比较价格或计算基准；被比较价格与历史成交价格差异幅度≥X%（折扣幅度阈值待业务方定参）"
+    article_ref: "第三十二条"
+    level: 黄
+    status: pending_params
+  - rule_id: R-029
+    rule_type: 阈值
+    trigger: "价格异常波动：直播间商品价格相对参照基准（近X日平台同款商品成交均价/直播前后价格）波动幅度≥X%（波动阈值待业务方定参），涉嫌先涨后降、虚构原价等虚假或引人误解的价格宣传"
+    article_ref: "第三十四条"
+    level: 黄
+    status: pending_params
+  # ── 第四章：直播营销人员服务机构 ──
+  - rule_id: R-030
+    rule_type: 义务
+    trigger: "直播营销人员服务机构未建立健全内部管理制度（招募、培训、使用、管理规范缺失）"
+    article_ref: "第三十八条"
+    level: 黄
+    status: active
+  - rule_id: R-031
+    rule_type: 义务
+    trigger: "服务机构招募直播营销人员时未核验其姓名、身份证件号码、经常居住地址、联系方式、专业资质、职业职务等身份信息"
+    article_ref: "第三十九条"
+    level: 黄
+    status: active
+  - rule_id: R-032
+    rule_type: 义务
+    trigger: "服务机构与直播营销人员签订的协议中含有减轻或者免除自身依法应承担责任条款"
+    article_ref: "第四十条"
+    level: 黄
+    status: active
+  - rule_id: R-033
+    rule_type: 义务
+    trigger: "服务机构与直播间运营者合作开展商业活动，未核验直播间运营者名称（姓名）、统一社会信用代码（身份证件号码）、实际经营地址、联系方式、行政许可等信息，或未签订书面协议"
+    article_ref: "第四十三条"
+    level: 黄
+    status: active
+  - rule_id: R-034
+    rule_type: 禁令
+    trigger: "服务机构组织虚假交易、虚假评价（刷单、刷好评、虚构成交量等行为信号：同IP/设备批量下单、无真实物流、评价时间高度集中）帮助虚假或引人误解的商业宣传"
+    article_ref: "第四十四条"
+    level: 红
+    status: active
+  - rule_id: R-035
+    rule_type: 义务
+    trigger: "服务机构提供直播选品服务时未核验实际经营者的名称、统一社会信用代码（身份证件号码）、地址、联系方式、行政许可、强制性产品认证、产品合格证明等信息；记录保存不足三年"
+    article_ref: "第四十五条"
+    level: 黄
+    status: active
